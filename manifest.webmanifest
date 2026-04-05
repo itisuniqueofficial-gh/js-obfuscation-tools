@@ -1,0 +1,10 @@
+{
+  "name": "JS Obfuscation Tools",
+  "short_name": "JS Tools",
+  "start_url": "/js_ob_dob/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#111827",
+  "description": "Static JavaScript obfuscation and deobfuscation tools.",
+  "icons": []
+}

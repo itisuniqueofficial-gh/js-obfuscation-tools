@@ -1,0 +1,31 @@
+---
+layout: page
+title: HEX + Base64 JS Obfuscator
+description: Convert JavaScript source into a HEX-wrapped Base64 obfuscated output directly in the browser.
+permalink: /
+tool_key: obfuscator
+---
+<section class="tool-card" aria-labelledby="tool-title">
+  <header class="page-header">
+    <h1 id="tool-title">HEX + Base64 JS Obfuscator Tool</h1>
+    <p class="page-intro">Encode JavaScript into a browser-generated `eval(atob("\x.."));` payload without sending data anywhere.</p>
+  </header>
+
+  <form class="tool-form" data-tool="obfuscator" novalidate>
+    <div class="field-group">
+      <label for="input">Enter your JavaScript code</label>
+      <textarea id="input" name="input" placeholder="console.log('Hello');" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Obfuscate</button>
+    </div>
+
+    <div class="field-group">
+      <label for="output">Obfuscated output</label>
+      <textarea id="output" name="output" class="output" readonly aria-readonly="true"></textarea>
+    </div>
+
+    <p class="status-message" data-status role="status" aria-live="polite"></p>
+  </form>
+</section>

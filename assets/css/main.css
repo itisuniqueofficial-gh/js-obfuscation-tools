@@ -1,0 +1,246 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f4f4;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --text: #111827;
+  --text-muted: #4b5563;
+  --border: #cbd5e1;
+  --accent: #111827;
+  --accent-contrast: #ffffff;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --radius: 16px;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --max-width: 56rem;
+  --font-stack: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html[data-theme="dark"] {
+  --bg: #020617;
+  --surface: #0f172a;
+  --surface-muted: #111827;
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --accent: #e5e7eb;
+  --accent-contrast: #020617;
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-stack);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.skip-link:focus {
+  left: var(--space-4);
+  top: var(--space-4);
+  z-index: 1000;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.site-header,
+.site-footer,
+.site-main {
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: var(--space-8) 0 var(--space-4);
+}
+
+.site-header__inner,
+.site-footer__inner {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.site-kicker {
+  margin: 0 0 var(--space-2);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.site-title {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav__list {
+  display: flex;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a,
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.625rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+}
+
+.site-main {
+  padding: var(--space-4) 0 var(--space-10);
+}
+
+.page-shell,
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.tool-card {
+  padding: var(--space-8);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.page-intro,
+.page-meta,
+.status-message,
+.site-footer p {
+  color: var(--text-muted);
+}
+
+.field-group {
+  margin-top: var(--space-6);
+}
+
+label {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+  font-weight: 700;
+}
+
+textarea,
+button {
+  width: 100%;
+  padding: var(--space-4);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+textarea {
+  min-height: 14rem;
+  resize: vertical;
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+button:hover,
+button:focus-visible,
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.theme-toggle:hover,
+.theme-toggle:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+}
+
+.actions {
+  margin-top: var(--space-6);
+}
+
+.output {
+  background: var(--surface);
+}
+
+.status-message {
+  min-height: 1.5rem;
+  margin: var(--space-4) 0 0;
+}
+
+.site-footer {
+  padding: 0 0 var(--space-8);
+}
+
+@media (max-width: 640px) {
+  .tool-card {
+    padding: var(--space-5);
+  }
+
+  .site-header__inner,
+  .site-footer__inner,
+  .site-nav__list {
+    align-items: stretch;
+  }
+
+  .site-nav,
+  .site-nav__list {
+    width: 100%;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,6 @@
+<nav class="site-nav" aria-label="Primary">
+  <ul class="site-nav__list">
+    <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Obfuscator</a></li>
+    <li><a href="{{ '/deobfuscator/' | relative_url }}"{% if page.url == '/deobfuscator/' %} aria-current="page"{% endif %}>Deobfuscator</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,18 @@
+title: JS Obfuscation Tools
+description: Browser-based JavaScript obfuscation and reverse deobfuscation tools built for GitHub Pages.
+url: "https://itisuniqueofficial-gh.github.io"
+baseurl: "/js-obfuscation-tools"
+lang: en
+markdown: kramdown
+permalink: pretty
+timezone: UTC
+theme: null
+plugins:
+exclude:
+  - README.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/images/social-preview.png

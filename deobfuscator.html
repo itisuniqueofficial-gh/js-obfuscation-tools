@@ -1,0 +1,31 @@
+---
+layout: page
+title: JS Reverse Deobfuscator
+description: Decode HEX plus Base64 wrapped JavaScript payloads back to readable source code in the browser.
+permalink: /deobfuscator/
+tool_key: deobfuscator
+---
+<section class="tool-card" aria-labelledby="tool-title">
+  <header class="page-header">
+    <h1 id="tool-title">JS Reverse Deobfuscator (HEX + Base64)</h1>
+    <p class="page-intro">Paste an `eval(atob("\x.."));` payload to recover the original JavaScript safely in your browser.</p>
+  </header>
+
+  <form class="tool-form" data-tool="deobfuscator" novalidate>
+    <div class="field-group">
+      <label for="input">Paste obfuscated JavaScript</label>
+      <textarea id="input" name="input" placeholder='eval(atob("\x63\x6f\x6e\x73\x6f\x6c\x65\x2e\x6c\x6f\x67\x28\x27\x48\x69\x27\x29\x3b"));' spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Deobfuscate</button>
+    </div>
+
+    <div class="field-group">
+      <label for="output">Recovered JavaScript</label>
+      <textarea id="output" name="output" class="output" readonly aria-readonly="true"></textarea>
+    </div>
+
+    <p class="status-message" data-status role="status" aria-live="polite"></p>
+  </form>
+</section>
