@@ -4,28 +4,49 @@ title: HEX + Base64 JS Obfuscator
 description: Convert JavaScript source into a HEX-wrapped Base64 obfuscated output directly in the browser.
 permalink: /
 tool_key: obfuscator
+eyebrow: Browser-safe workflow
+hero_title: HEX + Base64 JS Obfuscator
+hero_text: Encode JavaScript into a compact browser-generated payload without sending code to any server.
+hero_metrics:
+  - label: Processing
+    value: In-browser only
+  - label: Output format
+    value: HEX + Base64
+  - label: Target
+    value: Static GitHub Pages
+feature_cards:
+  - title: Private by default
+    text: Input stays in the browser, which keeps the tool lightweight and fast.
+  - title: Predictable output
+    text: The generated payload keeps the original project logic intact and easy to reuse.
+  - title: Jekyll friendly
+    text: The interface is built as reusable components for maintainable static deployment.
 ---
-<section class="tool-card" aria-labelledby="tool-title">
-  <header class="page-header">
-    <h1 id="tool-title">HEX + Base64 JS Obfuscator Tool</h1>
-    <p class="page-intro">Encode JavaScript into a browser-generated `eval(atob("\x.."));` payload without sending data anywhere.</p>
-  </header>
+{% include hero.html %}
 
-  <form class="tool-form" data-tool="obfuscator" novalidate>
-    <div class="field-group">
-      <label for="input">Enter your JavaScript code</label>
-      <textarea id="input" name="input" placeholder="console.log('Hello');" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
-    </div>
+<section class="section section--tight" aria-labelledby="tool-workspace-title">
+  <div class="section-heading">
+    <p class="section-kicker">Workspace</p>
+    <h2 id="tool-workspace-title">Encode JavaScript with a cleaner, focused workflow</h2>
+    <p class="section-copy">The tool keeps the original identity of the project while improving clarity, spacing, and responsiveness for production use.</p>
+  </div>
+  {% include tool-panel.html
+    tool="obfuscator"
+    button_text="Obfuscate"
+    input_label="Enter your JavaScript code"
+    input_placeholder="console.log('Hello');"
+    output_label="Obfuscated output"
+  %}
+</section>
 
-    <div class="actions">
-      <button type="submit">Obfuscate</button>
-    </div>
-
-    <div class="field-group">
-      <label for="output">Obfuscated output</label>
-      <textarea id="output" name="output" class="output" readonly aria-readonly="true"></textarea>
-    </div>
-
-    <p class="status-message" data-status role="status" aria-live="polite"></p>
-  </form>
+<section class="section" aria-labelledby="feature-title">
+  <div class="section-heading">
+    <p class="section-kicker">Highlights</p>
+    <h2 id="feature-title">Improved structure without changing the tool identity</h2>
+  </div>
+  <div class="feature-grid">
+    {% for item in page.feature_cards %}
+      {% include card.html title=item.title text=item.text %}
+    {% endfor %}
+  </div>
 </section>

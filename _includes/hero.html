@@ -1,0 +1,23 @@
+<section class="hero section" aria-labelledby="hero-title">
+  <div class="hero__layout">
+    <div class="hero__content">
+      <p class="hero__eyebrow">{{ page.eyebrow }}</p>
+      <h1 id="hero-title" class="hero__title">{{ page.hero_title | default: page.title }}</h1>
+      <p class="hero__copy">{{ page.hero_text | default: page.description }}</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="#tool-workspace-title">Open workspace</a>
+        <a class="button button--ghost" href="{{ '/deobfuscator/' | relative_url }}">{% if page.tool_key == 'deobfuscator' %}Open obfuscator{% else %}Open deobfuscator{% endif %}</a>
+      </div>
+    </div>
+    <div class="hero__panel" aria-label="Tool summary">
+      <div class="hero__metrics">
+        {% for metric in page.hero_metrics %}
+        <div class="hero__metric">
+          <span class="hero__metric-label">{{ metric.label }}</span>
+          <strong class="hero__metric-value">{{ metric.value }}</strong>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

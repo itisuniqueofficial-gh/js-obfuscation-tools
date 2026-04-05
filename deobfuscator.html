@@ -4,28 +4,49 @@ title: JS Reverse Deobfuscator
 description: Decode HEX plus Base64 wrapped JavaScript payloads back to readable source code in the browser.
 permalink: /deobfuscator/
 tool_key: deobfuscator
+eyebrow: Reverse workflow
+hero_title: JS Reverse Deobfuscator
+hero_text: Recover readable JavaScript from HEX plus Base64 wrapped payloads with the same fast browser-only flow.
+hero_metrics:
+  - label: Input type
+    value: eval(atob(...))
+  - label: Recovery
+    value: Original source
+  - label: Execution
+    value: No backend
+feature_cards:
+  - title: Fast diagnosis
+    text: Decode payloads immediately to inspect logic and trace encoded scripts.
+  - title: Consistent layout
+    text: Shared UI components keep both tools aligned and easier to maintain.
+  - title: Production ready
+    text: The static architecture works cleanly on GitHub Pages with minimal overhead.
 ---
-<section class="tool-card" aria-labelledby="tool-title">
-  <header class="page-header">
-    <h1 id="tool-title">JS Reverse Deobfuscator (HEX + Base64)</h1>
-    <p class="page-intro">Paste an `eval(atob("\x.."));` payload to recover the original JavaScript safely in your browser.</p>
-  </header>
+{% include hero.html %}
 
-  <form class="tool-form" data-tool="deobfuscator" novalidate>
-    <div class="field-group">
-      <label for="input">Paste obfuscated JavaScript</label>
-      <textarea id="input" name="input" placeholder='eval(atob("\x63\x6f\x6e\x73\x6f\x6c\x65\x2e\x6c\x6f\x67\x28\x27\x48\x69\x27\x29\x3b"));' spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
-    </div>
+<section class="section section--tight" aria-labelledby="tool-workspace-title">
+  <div class="section-heading">
+    <p class="section-kicker">Workspace</p>
+    <h2 id="tool-workspace-title">Decode payloads with better readability and structure</h2>
+    <p class="section-copy">The input and output areas now sit inside a stronger card layout with cleaner spacing, better contrast, and improved touch behavior.</p>
+  </div>
+  {% include tool-panel.html
+    tool="deobfuscator"
+    button_text="Deobfuscate"
+    input_label="Paste obfuscated JavaScript"
+    input_placeholder='eval(atob("\x63\x6f\x6e\x73\x6f\x6c\x65\x2e\x6c\x6f\x67\x28\x27\x48\x69\x27\x29\x3b"));'
+    output_label="Recovered JavaScript"
+  %}
+</section>
 
-    <div class="actions">
-      <button type="submit">Deobfuscate</button>
-    </div>
-
-    <div class="field-group">
-      <label for="output">Recovered JavaScript</label>
-      <textarea id="output" name="output" class="output" readonly aria-readonly="true"></textarea>
-    </div>
-
-    <p class="status-message" data-status role="status" aria-live="polite"></p>
-  </form>
+<section class="section" aria-labelledby="feature-title">
+  <div class="section-heading">
+    <p class="section-kicker">Highlights</p>
+    <h2 id="feature-title">Shared patterns for a cleaner reverse-engineering workflow</h2>
+  </div>
+  <div class="feature-grid">
+    {% for item in page.feature_cards %}
+      {% include card.html title=item.title text=item.text %}
+    {% endfor %}
+  </div>
 </section>

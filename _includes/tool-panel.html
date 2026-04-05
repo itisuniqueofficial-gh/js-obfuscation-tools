@@ -1,0 +1,28 @@
+<article class="tool-panel" aria-label="{{ include.tool | capitalize }} workspace">
+  <div class="tool-panel__header">
+    <div>
+      <p class="tool-panel__eyebrow">Interactive tool</p>
+      <h2 class="tool-panel__title">{{ include.button_text }} workflow</h2>
+    </div>
+    <p class="tool-panel__hint">Runs locally in your browser.</p>
+  </div>
+
+  <form class="tool-form" data-tool="{{ include.tool }}" novalidate>
+    <div class="tool-grid">
+      <div class="field-group field-group--compact">
+        <label for="input">{{ include.input_label }}</label>
+        <textarea id="input" name="input" placeholder="{{ include.input_placeholder }}" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+      </div>
+
+      <div class="field-group field-group--compact">
+        <label for="output">{{ include.output_label }}</label>
+        <textarea id="output" name="output" class="output" readonly aria-readonly="true"></textarea>
+      </div>
+    </div>
+
+    <div class="actions actions--inline">
+      <button class="button button--primary" type="submit">{{ include.button_text }}</button>
+      <p class="status-message" data-status role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</article>
